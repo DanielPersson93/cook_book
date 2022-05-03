@@ -2,7 +2,6 @@ import { model, Schema } from 'mongoose'
 import ICategory from './interfaces/category.model';
 import IRatings from './interfaces/ratings.models';
 import IIngredients from './interfaces/ingrediensts.model'
-import IComments from './interfaces/comments.model';
 import IInstructions from './interfaces/instructions.model';
 import CommentModel from './comment.model';
 
@@ -11,8 +10,8 @@ interface IRecipes {
     description: string;
     imgageUrl: string;
     timeInMin: string;
-    ratings?: number[];
-    category: string[];
+    ratings?: IRatings;
+    category: ICategory;
     ingredients: IIngredients;
     instructions: IInstructions;
     comments: any[];
@@ -23,7 +22,7 @@ const schema = new Schema<IRecipes>({
     description: { type: String, required: true },
     imgageUrl: { type: String, required: true },
     timeInMin: { type: String, required: true },
-    ratings: { type: [] },
+    ratings: [{ type: [], default: [] }],
     category: { type: [], required: true },
     ingredients: { type: [], required: true },
     instructions: { type: [], required: true },

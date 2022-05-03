@@ -12,9 +12,13 @@ export const getRecipes = async (req: Request, res: Response) => {
 }
 
 export const getRecipeById = async (req: Request, res: Response) => {
-    const recepeId = req.params.id
+    const recipeId = req.params.recipeId
     try {
-        const recipes = await RecipesModel.findById(recepeId);
+
+        const recipes = await RecipesModel.findById(recipeId);
+        console.log(recipes);
+        console.log(recipeId);
+
         return res.status(200).json(recipes)
     } catch (err) {
         return res.status(400).json(err)

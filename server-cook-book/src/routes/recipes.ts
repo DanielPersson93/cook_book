@@ -4,7 +4,7 @@ import { addRecipes, getRecipeById, getRecipes } from '../controllers/recipes.co
 const router = express.Router()
 
 router.get('/', getRecipes)
-router.get('/:id', getRecipeById)
+router.get('/:recipeId', getRecipeById)
 router.post('/', addRecipes)
 
 export default router

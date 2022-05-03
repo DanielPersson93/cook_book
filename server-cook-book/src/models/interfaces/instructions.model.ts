@@ -1,7 +1,7 @@
 interface IInstructions {
     instructions: [
         instruction: string,
-        order: number
+        prio: number
     ]
 }
 export default IInstructions
