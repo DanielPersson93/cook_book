@@ -18,6 +18,16 @@ font-size: 20px;
 line-height: 24px;
 text-align:center;
 align-self:center;
+border:none;
+transition: ease-in 0.5s;
+
+
+&:hover{
+    color:black;
+    background: #9AFF89;
+    transform:scale(1.1);
+    transition: ease-in 0.5s;
+}
 `
 
 
