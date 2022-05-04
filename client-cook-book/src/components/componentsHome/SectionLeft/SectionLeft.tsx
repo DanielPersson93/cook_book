@@ -10,11 +10,15 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 3px;
 width: 305px;
 height: 779px;
+margin-right:3rem;
 `;
 const CategoryUlStyle = styled.ul`
 list-style:none;
 margin-left:3rem;
-padding:0;`
+padding:0;
+
+`
+
 
 
 const SectionLeft = () => (

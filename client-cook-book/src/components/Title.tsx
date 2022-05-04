@@ -4,13 +4,16 @@ interface TitleText {
 }
 
 const TitleWrapper = styled.div`
-font-family: 'Inter', sans-serif;
+
+font-family: 'Lato', sans-serif;
 font-style: normal;
 font-weight: 700;
-font-size: 40px;
+font-size: 32px;
 line-height: 48px;
 text-align: center;
-letter-spacing: 1em;`
+letter-spacing: 2em;
+text-align:center;
+`
 
 const Title = ({ children }: TitleText) => (
     <TitleWrapper>

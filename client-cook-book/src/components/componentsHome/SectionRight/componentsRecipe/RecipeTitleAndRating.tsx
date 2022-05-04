@@ -5,8 +5,9 @@ import RecipeTitle from "./RecipeTitle"
 
 const RecipeTitleAndRatingStyle = styled.div`
 display:flex;
-justify-content:center;
+justify-content:space-between;
 align-items:center;
+margin:0;
 `
 const RecipeTitleAndRating = () => (
     <RecipeTitleAndRatingStyle>

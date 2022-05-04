@@ -1,20 +1,20 @@
 import styled from 'styled-components';
 import SectionLeft from './componentsHome/SectionLeft/SectionLeft';
-import SectionRight from './componentsHome/componentsSectionRight/SectionRight';
+import SectionRight from './componentsHome/SectionRight/SectionRight';
 
 
-const StyleHome = styled.section`
+const HomeStyle = styled.section`
 display:flex;
-justify-content:center
+justify-content:center;
 `
 
 
 const Home = () =>
 (
-    <StyleHome>
+    <HomeStyle>
         <SectionLeft></SectionLeft>
         <SectionRight></SectionRight>
-    </StyleHome>
+    </HomeStyle>
 )
 
 

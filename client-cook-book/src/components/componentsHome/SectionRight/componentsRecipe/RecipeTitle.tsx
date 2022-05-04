@@ -9,6 +9,7 @@ font-weight: 400;
 font-size: 24px;
 line-height: 0px;
 text-align: center;
+margin-bottom:16px;
 `
 const RecipeTitle = ({ children }: IRecipeTitle) => (
 
