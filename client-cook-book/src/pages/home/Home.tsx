@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import SectionLeft from './componentsHome/SectionLeft/SectionLeft';
-import SectionRight from './componentsHome/SectionRight/SectionRight';
+import SectionLeft from './components/SectionLeft';
+import SectionRight from './components/SectionRight';
 
 
 const HomeStyle = styled.section`

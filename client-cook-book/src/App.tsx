@@ -1,11 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
-import star from './assets/star.svg'
-import starYellow from './assets/starYellow.svg'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from './components/Home'
+import Home from './pages/home/Home'
 import './App.css';
-import Title from './components/Title';
+import Title from './shared/components/Title';
+import SinglePage from './pages/single/SinglePage';
 
 function App() {
   return (
@@ -13,9 +11,8 @@ function App() {
       <Title>A'LA SIMPLE</Title>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />}>
-
-          </Route>
+          <Route path="/" element={<Home />} />
+          <Route path="/:id" element={<SinglePage />} />
         </Routes>
       </BrowserRouter>
 

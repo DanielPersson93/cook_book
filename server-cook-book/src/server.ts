@@ -3,7 +3,7 @@ import express from "express";
 import { connectToDatabase } from "./db/db";
 import recipesRouter from './routes/recipes'
 import categoriesRouter from './routes/categoies'
-import commentRouter from './routes/comments'
+import cors from 'cors'
 
 // const env = process.env.ENV || 'local';
 // dotenv.config({ path: `config/${env}.env` });
@@ -18,10 +18,11 @@ const port = 4000;
 connectToDatabase();
 
 app.use(express.json());
-
+app.use(cors({
+    origin: "http://localhost:3000"
+}))
 app.use('/recipes', recipesRouter)
-/** Move these routes to recipes? */
-app.use('/', commentRouter)
+
 
 app.use('/categories', categoriesRouter)
 

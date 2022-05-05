@@ -7,9 +7,9 @@ height: 200px;
 margin-left:10px;
 
 `
-const RecipeImg = () => (
+const RecipeImg = ({ imageUrl }: any) => (
 
-    <RecipeImgStyled />
+    <RecipeImgStyled src={imageUrl}></RecipeImgStyled>
 )
 
 export default RecipeImg

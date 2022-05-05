@@ -3,16 +3,23 @@ import RecipeRating from "./RecipeRating"
 import RecipeTitle from "./RecipeTitle"
 
 
+
 const RecipeTitleAndRatingStyle = styled.div`
 display:flex;
 justify-content:space-between;
 align-items:center;
 margin:0;
 `
-const RecipeTitleAndRating = () => (
+
+interface RecipeTitleAndRatingProps {
+    title: string;
+    ratings: number[];
+}
+
+const RecipeTitleAndRating = ({ title, ratings }: RecipeTitleAndRatingProps) => (
     <RecipeTitleAndRatingStyle>
-        <RecipeTitle>Pannkakor</RecipeTitle>
-        <RecipeRating></RecipeRating>
+        <RecipeTitle>{title}</RecipeTitle>
+        <RecipeRating ratings={ratings}></RecipeRating>
     </RecipeTitleAndRatingStyle>
 
 )

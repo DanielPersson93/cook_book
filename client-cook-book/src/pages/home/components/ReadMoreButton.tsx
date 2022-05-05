@@ -1,7 +1,8 @@
 import styled from "styled-components"
 
 interface IReadMoreButton {
-    children: React.ReactNode
+    link: string;
+    children: React.ReactNode;
 }
 
 const ReadMoreButtonStyle = styled.button`
@@ -34,10 +35,12 @@ transition: ease-in 0.5s;
 
 
 
-const ReadMoreButton = ({ children }: IReadMoreButton) => (
-    <ReadMoreButtonStyle>
-        {children}
-    </ReadMoreButtonStyle>
+const ReadMoreButton = ({ children, link }: IReadMoreButton) => (
+    <a href={link}>
+        <ReadMoreButtonStyle>
+            {children}
+        </ReadMoreButtonStyle>
+    </a>
 
 )
 export default ReadMoreButton

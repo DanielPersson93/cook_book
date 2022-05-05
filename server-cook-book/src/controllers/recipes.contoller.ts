@@ -26,7 +26,7 @@ export const getRecipeById = async (req: Request, res: Response) => {
 }
 
 export const addRecipes = async (req: Request, res: Response) => {
-    const recepe = new RecipesModel({
+    const recipe = new RecipesModel({
         ...req.body
     });
     // recepe.title = req.body.title;
@@ -38,8 +38,8 @@ export const addRecipes = async (req: Request, res: Response) => {
     // recepe.instructions = req.body.instructions;
 
     try {
-        await recepe.save();
-        res.status(200).json(await getOne(recepe.id))
+        await recipe.save();
+        res.status(200).json(await getOne(recipe.id))
     } catch (err) {
         console.error(err);
         res.status(400).json(err);

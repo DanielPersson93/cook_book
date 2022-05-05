@@ -18,6 +18,7 @@ export const addRecipeComment = async (req: Request, res: Response) => {
             name: req.body.name,
             createdAt: new Date()
         });
+        recipe.ratings.push(req.body.rating);
         await recipe.save();
         res.status(200).json(recipe)
     } catch (err) {

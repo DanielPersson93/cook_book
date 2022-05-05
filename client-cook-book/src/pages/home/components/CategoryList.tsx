@@ -15,10 +15,7 @@ transition: ease-in 0.5s;
     /* transform:scale(1.1); */
     transition: ease-in 0.5s;
 }
-&:active{
-    color:#16a300;
 
-}
 `
 
 export default CategoryList

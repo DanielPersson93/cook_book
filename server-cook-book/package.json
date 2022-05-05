@@ -10,6 +10,7 @@
   "author": "Daniel Persson",
   "license": "ISC",
   "devDependencies": {
+    "@types/cors": "^2.8.12",
     "@types/express": "^4.17.8",
     "@types/uuid": "^8.3.4",
     "jest": "^27.3.1",
@@ -21,6 +22,7 @@
     "@types/pg": "^8.5.1",
     "azure-ad-jwt": "^1.1.0",
     "azure-ad-jwt-v2": "^2.1.4",
+    "cores": "^0.8.5",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "eaccounting": "^1.0.7",

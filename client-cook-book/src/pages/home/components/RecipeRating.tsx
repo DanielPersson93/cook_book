@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components"
-import starYellow from '../../../../assets/starYellow.svg'
+import starYellow from '../../../assets/starYellow.svg'
 
 const RecipeRatingStyle = styled.div`
 font-style: normal;
@@ -32,6 +32,7 @@ const RecipeRating = ({ ratings }: RecipeRatingProps) => {
     return (
         <RecipeRatingStyle>
             <img src={starYellow} alt="Start icon" />
+            <br />
 
             <p>{ratingLevel}/5</p>
         </RecipeRatingStyle>

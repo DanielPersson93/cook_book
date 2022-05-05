@@ -10,7 +10,7 @@ interface IRecipes {
     description: string;
     imgageUrl: string;
     timeInMin: string;
-    ratings?: IRatings;
+    ratings?: number[];
     category: ICategory;
     ingredients: IIngredients;
     instructions: IInstructions;
@@ -22,7 +22,7 @@ const schema = new Schema<IRecipes>({
     description: { type: String, required: true },
     imgageUrl: { type: String, required: true },
     timeInMin: { type: String, required: true },
-    ratings: [{ type: [], default: [] }],
+    ratings: [{ type: Number, default: [] }],
     category: { type: [], required: true },
     ingredients: { type: [], required: true },
     instructions: { type: [], required: true },

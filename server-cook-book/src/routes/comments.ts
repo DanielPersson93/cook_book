@@ -1,9 +1,9 @@
-import express from 'express';
-import { getRecipeComments, addRecipeComment } from '../controllers/comment.controller';
+// import express from 'express';
+// import { getRecipeComments, addRecipeComment } from '../controllers/comment.controller';
 
-const router = express.Router()
+// const router = express.Router()
 
-router.get('/recipes/:recipeId/comments', getRecipeComments)
-router.post('/recipes/:recipeId/comments', addRecipeComment)
+// router.get('/recipes/:recipeId/comments', getRecipeComments)
+// router.post('/recipes/:recipeId/comments', addRecipeComment)
 
-export default router
+// export default router
