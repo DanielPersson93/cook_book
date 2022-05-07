@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components"
-import { IRecipe, RecipeService } from "../../../../services/recipe.service";
+import { IRecipe, RecipeService } from "../../../services/recipe.service";
 
 
 const IngredientsStyled = styled.ul`

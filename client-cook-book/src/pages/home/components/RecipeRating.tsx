@@ -32,7 +32,6 @@ const RecipeRating = ({ ratings }: RecipeRatingProps) => {
     return (
         <RecipeRatingStyle>
             <img src={starYellow} alt="Start icon" />
-            <br />
 
             <p>{ratingLevel}/5</p>
         </RecipeRatingStyle>

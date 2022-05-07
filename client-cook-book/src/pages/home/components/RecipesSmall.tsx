@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { receiveMessageOnPort } from "worker_threads";
 import ReadMoreButton from "./ReadMoreButton";
 import RecipeImg from "./RecipeImg";
 import RecipeText from "./RecipeText";
@@ -7,7 +6,7 @@ import RecipeTitleAndRating from "./RecipeTitleAndRating";
 
 
 const ArticleContainerRecipeStyled = styled.div`
- display:flex;
+display:flex;
 background: #85D29F;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 3px;

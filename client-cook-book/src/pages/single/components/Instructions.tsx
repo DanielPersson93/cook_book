@@ -27,7 +27,6 @@ text-align:left;
 list-style:none;
 margin:1rem;
 padding:0;
-text-transform:capitalize;
 `
 const StyledBoldInSpan = styled.span`
 font-weight:bold;
@@ -37,7 +36,7 @@ font-weight:bold;
 const Instructions = ({ recipe }: any) => {
     return (
         <InstructionsStyled>
-            <TitleStyled>Följ Dessa Steg</TitleStyled>
+            <TitleStyled>Följ dessa steg</TitleStyled>
             <InstructionsUlStyled>{recipe?.instructions.map((i: any) => (<li key={i.prio}><StyledBoldInSpan>{i.prio}</StyledBoldInSpan>. {i.instruction}</li>))}</InstructionsUlStyled>
         </InstructionsStyled >
     )

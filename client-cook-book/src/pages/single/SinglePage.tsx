@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 import { useParams, } from 'react-router';
 import styled from 'styled-components';
 import { RecipeService } from '../../services/recipe.service';
-import BackToHome from './components/backToHome/BacktoHome';
-import Ingredients from './components/ingredients/Ingredients';
-import Instructions from './components/instructions/Instructions';
-import Opinion from './components/opinion/Opinion';
+import BackToHome from './components/BacktoHome';
+import Ingredients from './components/Ingredients';
+import Instructions from './components/Instructions';
+import Opinion from './components/titleRatingDescription/opinion/Opinion';
 import HeadingRatingDescription from './components/titleRatingDescription/HeadingRatingDescription'
 
 
