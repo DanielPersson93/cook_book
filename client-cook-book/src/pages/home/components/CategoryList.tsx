@@ -9,13 +9,12 @@ font-size: 20px;
 list-style:none;
 text-align:left;
 padding-top:0.5rem;
-transition: ease-in 0.5s;
+transition: ease-in 0.3s;
+cursor:pointer;
 &:hover{
     color:#16a300;
-    /* transform:scale(1.1); */
-    transition: ease-in 0.5s;
+    transition: ease-in 0.3s;
 }
-
 `
 
 export default CategoryList

@@ -3,8 +3,27 @@ import RecipesModel from '../models/recipes.models'
 
 export const getRecipes = async (req: Request, res: Response) => {
     const searchQuery = req.query.search;
+    const category = req.query.category;
+
+    const recipes = await RecipesModel.find();
+    const query = searchQuery ?
+        {
+            title: {
+                $regex: searchQuery,
+                $options: "i"
+            }
+        }
+        : {};
+
+    const categoryQuery = category ? { "category.url": category } : {};
+
     try {
-        const recipes = await RecipesModel.find(searchQuery ? { title: { $regex: searchQuery, $options: "i" } } : {});
+        const recipes = await RecipesModel.find(
+            {
+                ...query,
+                ...categoryQuery
+            }
+        );
         return res.status(200).json(recipes)
     } catch (err) {
         return res.status(400).json(err)
@@ -31,7 +50,7 @@ export const addRecipes = async (req: Request, res: Response) => {
     });
     // recepe.title = req.body.title;
     // recepe.description = req.body.description;
-    // recepe.imgageUrl = req.body.imgageUrl;
+    // recepe.imageUrl = req.body.imageUrl;
     // recepe.timeInMin = req.body.timeInMin;
     // recepe.category = req.body.category;
     // recepe.ingredients = req.body.ingredients;

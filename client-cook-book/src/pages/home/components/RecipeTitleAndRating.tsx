@@ -2,8 +2,6 @@ import styled from "styled-components"
 import RecipeRating from "./RecipeRating"
 import RecipeTitle from "./RecipeTitle"
 
-
-
 const RecipeTitleAndRatingStyle = styled.div`
 display:flex;
 justify-content:space-between;
@@ -21,7 +19,6 @@ const RecipeTitleAndRating = ({ title, ratings }: RecipeTitleAndRatingProps) => 
         <RecipeTitle>{title}</RecipeTitle>
         <RecipeRating ratings={ratings}></RecipeRating>
     </RecipeTitleAndRatingStyle>
-
 )
 
 export default RecipeTitleAndRating

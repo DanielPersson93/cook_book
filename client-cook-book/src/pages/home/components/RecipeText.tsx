@@ -1,8 +1,10 @@
 import { ReactNode } from "react";
 import styled from "styled-components";
+
 interface IRecipeText {
     children: React.ReactNode
 }
+
 const RecipeTextStyle = styled.p`
 font-family: 'Lato', sans-serif;
 font-style: normal;
@@ -14,7 +16,6 @@ align-items: center;
 `
 
 const RecipeText = ({ children }: IRecipeText) => (
-
     <RecipeTextStyle>
         {children}
     </RecipeTextStyle>

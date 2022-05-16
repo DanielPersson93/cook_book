@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { IDesctiptionField } from "../../../../interface/Interface";
 
 const TitleStyled = styled.h1`
 font-family: 'Lato', sans-serif;
@@ -10,11 +11,10 @@ margin-left:2rem;
 text-align: center;
 `
 
-const Title = ({ children }: any) => (
+const Title = ({ children }: IDesctiptionField) => (
     <>
         <TitleStyled>{children}</TitleStyled>
     </>
-
 )
 
 export default Title

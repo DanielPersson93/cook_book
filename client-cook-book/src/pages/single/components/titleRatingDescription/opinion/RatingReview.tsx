@@ -7,14 +7,18 @@ const StarRatingsStyled = styled.div`
 display:flex;
 `
 
-const RatingReview = () => {
+const RatingReview = ({ setRating }: any) => {
     const [selectedRatingLevel, setSelectedRatingLevel] = useState(0);
     const [selectedRating, setSelectedRating] = useState(0);
 
+    const setRatingLevel = (num: number) => {
+        setSelectedRatingLevel(num);
+        setRating(num);
+    };
     return (
         <StarRatingsStyled>
             {[1, 2, 3, 4, 5].map((num) => (
-                <div onClick={() => setSelectedRatingLevel(num)} onMouseEnter={() => setSelectedRating(num)} onMouseLeave={() => setSelectedRating(selectedRatingLevel)}>
+                <div key={num} onClick={() => setRatingLevel(num)} onMouseEnter={() => setSelectedRating(num)} onMouseLeave={() => setSelectedRating(selectedRatingLevel)}>
                     {selectedRating >= num ? <img src={starYellow} alt="Start icon" /> : <img src={star} alt="Start icon" />}
                 </div>
             ))}

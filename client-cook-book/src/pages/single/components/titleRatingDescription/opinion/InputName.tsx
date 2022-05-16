@@ -1,4 +1,3 @@
-import { ReactNode } from "react"
 import styled from "styled-components"
 import { IPlaceHolder } from "../../../../../interface/Interface"
 
@@ -19,11 +18,10 @@ border:none;
     outline: none;
 }
 `
-
-
-
-const InputName = ({ placeholder }: IPlaceHolder) => (
-    <InputNameStyled placeholder={placeholder} />
+const InputName = ({ placeholder, setter }: IPlaceHolder) => (
+    <InputNameStyled onInput={((evt: any) => {
+        setter(evt.target.value)
+    })} placeholder={placeholder} />
 )
 
 export default InputName

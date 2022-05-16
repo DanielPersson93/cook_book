@@ -17,6 +17,7 @@ font-weight: 700;
 font-size: 24px;
 margin: 1rem;
  `
+
 const InstructionsUlStyled = styled.ul`
 font-family: 'Lato', sans-serif;
 font-style: normal;

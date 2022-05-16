@@ -13,7 +13,6 @@ display: flex;
 align-items: center;
 `
 
-
 interface RecipeRatingProps {
     ratings: number[];
 }
@@ -33,7 +32,7 @@ const RecipeRating = ({ ratings }: RecipeRatingProps) => {
         <RecipeRatingStyle>
             <img src={starYellow} alt="Start icon" />
 
-            <p>{ratingLevel}/5</p>
+            <p>{Math.round(ratingLevel * 100) / 100}/5</p>
         </RecipeRatingStyle>
     )
 }

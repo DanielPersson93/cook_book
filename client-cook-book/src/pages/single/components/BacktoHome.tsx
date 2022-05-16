@@ -1,6 +1,4 @@
-import { Route, Routes } from "react-router-dom"
 import styled from "styled-components"
-import Home from "../../home/Home"
 
 const BackToHomeStyled = styled.div`
 background: #006F39;
@@ -27,18 +25,15 @@ color: #FFFFFF;
 const BackToHomeLinkStyled = styled.a`
 text-decoration:none;
 `
+
 const BackToHome = () => {
-
     return (
-
         <BackToHomeLinkStyled href="/">
             <BackToHomeStyled>
                 <BackToHomeTextStyled>Back to home</BackToHomeTextStyled>
 
             </BackToHomeStyled>
         </BackToHomeLinkStyled>
-
-
     )
 }
 

@@ -1,5 +1,5 @@
-import { ReactNode } from "react"
 import styled from "styled-components"
+import { IButtonText } from "../../../../../interface/Interface"
 
 const SendButtonStyled = styled.button`
 background: #148E00;
@@ -15,16 +15,9 @@ font-weight: 400;
 font-size: 20px;
 line-height: 24px;
 `
-interface IButtonText {
-    children: ReactNode
-}
 
-const SendButton = ({ children }: IButtonText) => (
-    <SendButtonStyled>{children}</SendButtonStyled>
-
-
+const SendButton = ({ children, onClick }: IButtonText) => (
+    <SendButtonStyled onClick={onClick}>{children}</SendButtonStyled>
 )
-
-
 
 export default SendButton

@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './pages/home/Home'
 import './App.css';
@@ -9,8 +8,8 @@ import styled from 'styled-components';
 const MainContent = styled.div`
 display:flex;
 justify-content:center;
-
 `
+
 function App() {
   return (
     <div className="App">
@@ -20,11 +19,11 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/category/:categoryUrl" element={<Home />} />
             <Route path="/:id" element={<SinglePage />} />
           </Routes>
         </BrowserRouter>
       </MainContent>
-
     </div>
   );
 }

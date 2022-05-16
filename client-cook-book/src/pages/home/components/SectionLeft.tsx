@@ -2,6 +2,8 @@ import styled from "styled-components";
 import CategoryList from "./CategoryList";
 import CategoryTitle from "./CategoryTitle";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { CategoryService } from "../../../services/category.service";
 
 const SectionLeftStyle = styled.div`
 display:flex;
@@ -10,40 +12,40 @@ background: #85D29F;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 3px;
 width: 305px;
-height: 779px;
+height:100%;
 margin-right:3rem;
-`;
+`
+
 const CategoryUlStyle = styled.ul`
 list-style:none;
 margin-left:3rem;
 padding:0;
 text-transform: capitalize;
-
-`;
+`
 
 const SectionLeft = () => {
-
-
-    const [recipesTitle, setRecipeTitle] = useState([]);
+    const [categories, setCategories] = useState([]);
+    const navigate = useNavigate();
+    const categoryService = new CategoryService();
 
     useEffect(() => {
-        const loadRecipeTitles = async () => {
-            const res = await fetch('http://localhost:4000/categories');
-            const recipesTitle = await res.json();
-            setRecipeTitle(recipesTitle)
-        }
-        loadRecipeTitles();
+        categoryService.getCategories().then((categories) => {
+            setCategories(categories)
+        });
     }, []);
+
+    const changeRoute = (cat: any) => {
+        navigate('/category/' + cat._id[0].url);
+    }
 
     return (
         <SectionLeftStyle>
             <CategoryTitle>Kategorier</CategoryTitle>
             <CategoryUlStyle>
-                {recipesTitle.map((title: string) => (<CategoryList key={title}>{title}</CategoryList>))}
+                {categories.map((category: any) => (<CategoryList onClick={() => changeRoute(category)} key={category._id[0].name}>{category._id[0].name}{`(${category.count})`}</CategoryList>))}
             </CategoryUlStyle>
-        </SectionLeftStyle>
+        </SectionLeftStyle >
     )
 }
-
 
 export default SectionLeft

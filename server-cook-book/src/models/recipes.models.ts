@@ -8,10 +8,10 @@ import CommentModel from './comment.model';
 interface IRecipes {
     title: string;
     description: string;
-    imgageUrl: string;
+    imageUrl: string;
     timeInMin: string;
     ratings?: number[];
-    category: ICategory;
+    category: ICategory[];
     ingredients: IIngredients;
     instructions: IInstructions;
     comments: any[];
@@ -20,7 +20,7 @@ interface IRecipes {
 const schema = new Schema<IRecipes>({
     title: { type: String, required: true },
     description: { type: String, required: true },
-    imgageUrl: { type: String, required: true },
+    imageUrl: { type: String/*, required: true*/ },
     timeInMin: { type: String, required: true },
     ratings: [{ type: Number, default: [] }],
     category: { type: [], required: true },
@@ -28,6 +28,7 @@ const schema = new Schema<IRecipes>({
     instructions: { type: [], required: true },
     comments: [{ type: CommentModel.schema, default: [] }],
 })
+
 
 const RecipesModel = model<IRecipes>('Recipes', schema)
 export default RecipesModel

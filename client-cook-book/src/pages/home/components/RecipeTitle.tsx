@@ -1,7 +1,9 @@
 import styled from "styled-components";
+
 interface IRecipeTitle {
     children?: React.ReactNode
 }
+
 const RecipeTitleStyle = styled.h4`
 font-family: 'Inter', sans-serif;
 font-style: normal;
@@ -11,8 +13,8 @@ line-height: 0px;
 text-align: center;
 margin-bottom:16px;
 `
-const RecipeTitle = ({ children }: IRecipeTitle) => (
 
+const RecipeTitle = ({ children }: IRecipeTitle) => (
     <RecipeTitleStyle>
         {children}
     </RecipeTitleStyle>

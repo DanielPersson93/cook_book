@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components"
 
 interface IReadMoreButton {
@@ -22,7 +23,6 @@ align-self:center;
 border:none;
 transition: ease-in 0.5s;
 
-
 &:hover{
     color:black;
     background: #9AFF89;
@@ -31,16 +31,12 @@ transition: ease-in 0.5s;
 }
 `
 
-
-
-
-
 const ReadMoreButton = ({ children, link }: IReadMoreButton) => (
-    <a href={link}>
+    <Link to={`/${link}`}>
         <ReadMoreButtonStyle>
             {children}
         </ReadMoreButtonStyle>
-    </a>
-
+    </Link>
 )
+
 export default ReadMoreButton

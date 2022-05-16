@@ -1,11 +1,15 @@
+import { useState } from "react"
 import styled from "styled-components"
 import InputLeaveReview from "./InputLeaveReview"
 import InputName from "./InputName"
 import RatingReview from "./RatingReview"
 import SendButton from "./SendButton"
+import { useDispatch } from "react-redux";
+import { ReviewActionType } from "../../../../../store/review/reviewReducer"
+import { CommentService } from "../../../../../services/comment.service"
 
 const OpinionStyled = styled.div`
-        background: #85D29F;
+background: #85D29F;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 3px;
 width: 400px;
@@ -29,16 +33,30 @@ margin-left:23px;
 margin-right:23px;
 `
 
-const Opinion = () => {
+const Opinion = ({ recipe, setRecipe }: any) => {
+    const [name, setName] = useState("");
+    const [comment, setComment] = useState("");
+    const [rating, setRating] = useState(0);
+    const dispatch = useDispatch();
 
+    const send = () => {
+        const newComment = { name, comment, rating }
+        console.log(name, comment, rating);
+
+        const commentService = new CommentService();
+        commentService.postComment(recipe._id, newComment).then((recipe) => {
+            dispatch({ payload: rating, type: ReviewActionType.AddReview })
+            setRecipe(recipe);
+        });
+    }
     return (
         <OpinionStyled>
             <OpinionTitle>Lämna omdöme</OpinionTitle>
-            <InputName placeholder="Name"></InputName>
-            <InputLeaveReview placeholder="Skriv en recension...."></InputLeaveReview>
+            <InputName setter={setName} placeholder="Name"></InputName>
+            <InputLeaveReview setter={setComment} placeholder="Skriv en recension...."></InputLeaveReview>
             <RatingAndButtonWrapperStyled>
-                <RatingReview></RatingReview>
-                <SendButton>Sänd</SendButton>
+                <RatingReview setRating={setRating}></RatingReview>
+                <SendButton onClick={send}>Sänd</SendButton>
             </RatingAndButtonWrapperStyled>
         </OpinionStyled>
     )

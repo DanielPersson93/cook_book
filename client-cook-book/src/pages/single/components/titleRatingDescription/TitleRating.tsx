@@ -6,12 +6,12 @@ const TitleRatingStyled = styled.div`
 display:flex;
 justify-content:space-between;
 `
+
 const TitleRating = ({ recipe }: any) => (
     <TitleRatingStyled >
         <Title>{recipe?.title}</Title>
-        <RatingsContainer recipe={recipe} />
+        <RatingsContainer />
     </TitleRatingStyled>
-
 )
 
 export default TitleRating

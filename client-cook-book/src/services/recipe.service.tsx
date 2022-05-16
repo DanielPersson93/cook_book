@@ -1,14 +1,21 @@
+import { IRecipes } from "../interface/recipe";
 import httpClient from "./axios.service";
 
-export interface IRecipe {
-    // ...
-}
 export class RecipeService {
-    getAll(): Promise<IRecipe[]> {
-        return httpClient.get<IRecipe[]>('recipes').then((res) => res.data);
+    async getAll(query = "", category = ""): Promise<IRecipes[]> {
+        const res = await httpClient.get<IRecipes[]>('recipes',
+            {
+                params: {
+                    search: query,
+                    category
+                }
+            }
+        );
+        return res.data;
     }
 
-    getOne(recipeId: string): Promise<IRecipe> {
-        return httpClient.get<IRecipe>(`recipes/${recipeId}`).then((res) => res.data);
+    async getOne(recipeId: string): Promise<IRecipes> {
+        const res = await httpClient.get<IRecipes>(`recipes/${recipeId}`);
+        return res.data;
     }
 }

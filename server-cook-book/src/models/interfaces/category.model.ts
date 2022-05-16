@@ -1,4 +1,5 @@
 interface ICategory {
-    category: string[];
+    name: string;
+    url: string; //efterratt
 }
 export default ICategory

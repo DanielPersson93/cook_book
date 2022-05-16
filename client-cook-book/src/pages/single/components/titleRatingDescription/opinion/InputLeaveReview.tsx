@@ -1,6 +1,6 @@
-import { ReactNode } from "react"
 import styled from "styled-components"
 import { IPlaceHolder } from "../../../../../interface/Interface"
+
 const InputLeaveReviewStyled = styled.textarea`
 border-radius: 3px;
 width: calc(354px - 2rem);
@@ -18,10 +18,10 @@ resize: none;
 }
 `
 
-
-
-const InputLeaveReview = ({ placeholder }: IPlaceHolder) => (
-    <InputLeaveReviewStyled placeholder={placeholder} />
+const InputLeaveReview = ({ placeholder, setter }: IPlaceHolder) => (
+    <InputLeaveReviewStyled onInput={((evt: any) => {
+        setter(evt.target.value)
+    })} placeholder={placeholder} />
 )
 
 export default InputLeaveReview
