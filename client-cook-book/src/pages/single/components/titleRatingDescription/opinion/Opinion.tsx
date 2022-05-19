@@ -41,7 +41,18 @@ const Opinion = ({ recipe, setRecipe }: any) => {
 
     const send = () => {
         const newComment = { name, comment, rating }
-        console.log(name, comment, rating);
+        console.log(newComment);
+        if (name.length === 0) {
+            alert("Fyll i namn")
+            return;
+        };
+        if (comment.length === 0) {
+            return alert('Fyll i kommentar')
+        };
+        if (rating === 0) {
+            return alert('Glöm inte att rösta');
+        }
+        alert("Tack för ditt omdömme!");
 
         const commentService = new CommentService();
         commentService.postComment(recipe._id, newComment).then((recipe) => {
@@ -55,7 +66,7 @@ const Opinion = ({ recipe, setRecipe }: any) => {
             <InputName setter={setName} placeholder="Name"></InputName>
             <InputLeaveReview setter={setComment} placeholder="Skriv en recension...."></InputLeaveReview>
             <RatingAndButtonWrapperStyled>
-                <RatingReview setRating={setRating}></RatingReview>
+                <RatingReview setRating={setRating} ></RatingReview>
                 <SendButton onClick={send}>Sänd</SendButton>
             </RatingAndButtonWrapperStyled>
         </OpinionStyled>

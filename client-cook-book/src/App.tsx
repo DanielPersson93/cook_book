@@ -13,7 +13,9 @@ justify-content:center;
 function App() {
   return (
     <div className="App">
-      <Title>A'LA SIMPLE</Title>
+      <a href="/">
+        <Title>A'LA SIMPLE</Title>
+      </a>
       <MainContent>
 
         <BrowserRouter>
