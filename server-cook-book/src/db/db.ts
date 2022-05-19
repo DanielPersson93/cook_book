@@ -1,8 +1,11 @@
 import mongoose from 'mongoose'
-
+import dotenv from 'dotenv'
+dotenv.config();
 export function connectToDatabase(): void {
-
-    const uri = 'mongodb://localhost:27017/dinners';
+    const name = process.env.MONGO_USER;
+    const password = process.env.MONGO_PASS;
+    const db = process.env.MONGO_DATABASE;
+    const uri = `mongodb+srv://${name}:${password}@cluster0.r7qtk.mongodb.net/${db}?retryWrites=true&w=majority`;
     const dbURI = process.env["DB_URL"] || uri;
 
     mongoose
