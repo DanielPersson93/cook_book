@@ -6,10 +6,10 @@ export function connectToDatabase(): void {
     const password = process.env.MONGO_PASS;
     const db = process.env.MONGO_DATABASE;
     const uri = `mongodb+srv://${name}:${password}@cluster0.r7qtk.mongodb.net/${db}?retryWrites=true&w=majority`;
-    const dbURI = process.env["DB_URL"] || uri;
+
 
     mongoose
-        .connect(dbURI, {
+        .connect(uri, {
             serverSelectionTimeoutMS: 5000,
         })
         .catch((err: any) => console.log(err.reason));
