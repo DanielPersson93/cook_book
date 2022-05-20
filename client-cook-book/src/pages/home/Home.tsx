@@ -25,6 +25,7 @@ const Home = () => {
                 payload: recipes
             })
         });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [recipeService, params.categoryUrl]);
 
     return (

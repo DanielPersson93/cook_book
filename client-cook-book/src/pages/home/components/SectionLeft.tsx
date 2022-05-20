@@ -32,6 +32,7 @@ const SectionLeft = () => {
         categoryService.getCategories().then((categories) => {
             setCategories(categories)
         });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const changeRoute = (cat: any) => {
