@@ -28,6 +28,7 @@ transition: ease-in 0.5s;
     background: #9AFF89;
     transform:scale(1.1);
     transition: ease-in 0.5s;
+    align-self:center;
 }
 `
 

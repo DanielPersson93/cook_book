@@ -19,6 +19,16 @@ width:60%;
 margin-left:1rem;
 text-align:left;
 `
+const ButtonTimeIngredientsStyled = styled.div`
+display:flex;
+justify-content:space-between;
+align-items:flex-end;
+font-family: 'Lato', sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+margin-bottom:1rem;
+`
 
 const RecipeSmall = ({ recipe }: any) => (
     <ArticleContainerRecipeStyled>
@@ -28,9 +38,12 @@ const RecipeSmall = ({ recipe }: any) => (
             <RecipeText>
                 {recipe.description}
             </RecipeText>
-            <ReadMoreButton link={recipe._id}>Läs mer</ReadMoreButton>
-            <p>{recipe.timeInMin}</p>
-            <p>{recipe.ingredients.length}ingredienser</p>
+            <ButtonTimeIngredientsStyled>
+
+                <ReadMoreButton link={recipe._id}>Läs mer</ReadMoreButton>
+                <p>{recipe.timeInMin}</p>
+                <p>{recipe.ingredients.length} ingredienser</p>
+            </ButtonTimeIngredientsStyled>
         </RecipeContainer>
     </ArticleContainerRecipeStyled>
 )
