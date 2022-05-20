@@ -36,7 +36,7 @@ const SinglePage = () => {
             setRecipe(recipe);
             dispatch({ payload: recipe.ratings, type: ReviewActionType.SetReviews });
         })
-    }, [])
+    }, [id])
 
     return (
         <SinglePageBlockStyled>
