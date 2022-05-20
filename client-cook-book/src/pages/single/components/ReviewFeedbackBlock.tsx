@@ -1,8 +1,5 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import styled from "styled-components"
 import { IRecipes } from "../../../interface/recipe";
-import { CommentService, IComment } from "../../../services/comment.service";
 import ReviewComments from "./ReviewComments"
 
 const ReviewFeedbackBlockStyled = styled.div`
@@ -19,7 +16,6 @@ interface ReviewFeedbackBlockProps {
 }
 
 const ReviewFeedbackBlock = ({ recipe }: ReviewFeedbackBlockProps) => {
-    const { id } = useParams();
 
     return (
         <ReviewFeedbackBlockStyled>

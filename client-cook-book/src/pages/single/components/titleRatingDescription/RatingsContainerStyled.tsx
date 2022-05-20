@@ -25,7 +25,7 @@ const RatingsContainer = () => {
     const reviews = useSelector((state: any) => state.reviewReducer.reviews);
 
     useEffect(() => {
-        console.log(reviews);
+        // console.log(reviews);
         if (!reviews || reviews.length === 0) return;
 
         const rating = reviews.reduce((prev: number, curr: number) => {

@@ -41,7 +41,7 @@ const Opinion = ({ recipe, setRecipe }: any) => {
 
     const send = () => {
         const newComment = { name, comment, rating }
-        console.log(newComment);
+        // console.log(newComment);
         if (name.length === 0) {
             alert("Fyll i namn")
             return;

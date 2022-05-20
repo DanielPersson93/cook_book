@@ -35,8 +35,8 @@ export const getRecipeById = async (req: Request, res: Response) => {
     try {
 
         const recipes = await RecipesModel.findById(recipeId);
-        console.log(recipes);
-        console.log(recipeId);
+        // console.log(recipes);
+        // console.log(recipeId);
 
         return res.status(200).json(recipes)
     } catch (err) {

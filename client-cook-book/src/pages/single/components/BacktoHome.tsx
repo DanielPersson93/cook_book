@@ -31,7 +31,6 @@ const BackToHome = () => {
         <BackToHomeLinkStyled href="/">
             <BackToHomeStyled>
                 <BackToHomeTextStyled>Back to home</BackToHomeTextStyled>
-
             </BackToHomeStyled>
         </BackToHomeLinkStyled>
     )
