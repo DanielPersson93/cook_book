@@ -14,6 +14,16 @@ font-style: normal;
 font-weight: 400;
 font-size: 20px;
 line-height: 24px;
+transition:ease-in .4s;
+&:hover{
+    transition:ease-in .4s;
+    color:black;
+    background:#9AFF89;
+}
+&:active{
+    box-shadow: inset 2px 6px 4px rgba(0, 0, 0, 0.25);
+
+}
 `
 
 const SendButton = ({ children, onClick }: IButtonText) => (

@@ -21,14 +21,14 @@ line-height: 24px;
 text-align:center;
 align-self:center;
 border:none;
-transition: ease-in 0.5s;
-
+transition:ease-in .4s;
 &:hover{
+    transition:ease-in .4s;
     color:black;
-    background: #9AFF89;
-    transform:scale(1.1);
-    transition: ease-in 0.5s;
-    align-self:center;
+    background:#9AFF89;
+}
+&:active{
+    box-shadow: inset 2px 6px 4px rgba(0, 0, 0, 0.25);
 }
 `
 

@@ -11,6 +11,18 @@ margin:0;
 display:flex;
 justify-content:center;
 align-items:center;
+color: #FFFFFF;
+transition:ease-in .4s;
+&:hover{
+    background: #02B961;
+    color:black;
+    transition:ease-in .4s;
+    
+}
+&:active{
+    box-shadow: inset 2px 6px 4px rgba(0, 0, 0, 0.25);
+
+}
 `
 
 const BackToHomeTextStyled = styled.h1`
@@ -19,7 +31,7 @@ font-style: normal;
 font-weight: 700;
 font-size: 32px;
 line-height: 38px;
-color: #FFFFFF;
+
 `
 
 const BackToHomeLinkStyled = styled.a`
