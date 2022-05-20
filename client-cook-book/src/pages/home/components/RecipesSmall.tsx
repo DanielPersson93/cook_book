@@ -29,6 +29,8 @@ const RecipeSmall = ({ recipe }: any) => (
                 {recipe.description}
             </RecipeText>
             <ReadMoreButton link={recipe._id}>Läs mer</ReadMoreButton>
+            <p>{recipe.timeInMin}</p>
+            <p>{recipe.ingredients.length}ingredienser</p>
         </RecipeContainer>
     </ArticleContainerRecipeStyled>
 )
