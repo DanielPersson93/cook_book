@@ -5,9 +5,9 @@ background: #85D29F;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 3px;
 width: 428px;
-height: 389px;
+height: 600px;
 margin-left:24px;
-transform:translate(0, -45%);
+transform:translate(0, -29%);
 `
 
 const TitleStyled = styled.h1`
@@ -28,6 +28,7 @@ text-align:left;
 list-style:none;
 margin:1rem;
 padding:0;
+display:inline-block;
 `
 const StyledBoldInSpan = styled.span`
 font-weight:bold;
