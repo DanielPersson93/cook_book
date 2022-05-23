@@ -1,6 +1,6 @@
 
 import express from 'express';
-import { getAllCategories, getRecipesCategories } from '../controllers/categoriescontroller';
+import { getAllCategories, getRecipesCategories } from '../controllers/category.controller';
 
 const router = express.Router()
 

@@ -4,26 +4,40 @@ import RecipesModel from '../models/recipes.models'
 export const getRecipes = async (req: Request, res: Response) => {
     const searchQuery = req.query.search;
     const category = req.query.category;
-
-    const recipes = await RecipesModel.find();
-    const query = searchQuery ?
+    const searchForTitleOrCategoryName = searchQuery ?
         {
-            title: {
-                $regex: searchQuery,
-                $options: "i"
-            }
+            $or: [
+                {
+                    title: {
+                        $regex: searchQuery,
+                        $options: "i"
+                    }
+                },
+                {
+                    "category.name": {
+                        $regex: searchQuery,
+                        $options: "i"
+                    }
+                }
+            ]
         }
         : {};
 
     const categoryQuery = category ? { "category.url": category } : {};
 
     try {
-        const recipes = await RecipesModel.find(
+        const recipes = await RecipesModel.aggregate([
             {
-                ...query,
-                ...categoryQuery
+                $match: {
+                    $and: [
+                        { ...searchForTitleOrCategoryName },
+                        { ...categoryQuery }
+                    ]
+
+                }
             }
-        );
+        ]);
+
         return res.status(200).json(recipes)
     } catch (err) {
         return res.status(400).json(err)
@@ -35,8 +49,6 @@ export const getRecipeById = async (req: Request, res: Response) => {
     try {
 
         const recipes = await RecipesModel.findById(recipeId);
-        // console.log(recipes);
-        // console.log(recipeId);
 
         return res.status(200).json(recipes)
     } catch (err) {
@@ -48,13 +60,6 @@ export const addRecipes = async (req: Request, res: Response) => {
     const recipe = new RecipesModel({
         ...req.body
     });
-    // recepe.title = req.body.title;
-    // recepe.description = req.body.description;
-    // recepe.imageUrl = req.body.imageUrl;
-    // recepe.timeInMin = req.body.timeInMin;
-    // recepe.category = req.body.category;
-    // recepe.ingredients = req.body.ingredients;
-    // recepe.instructions = req.body.instructions;
 
     try {
         await recipe.save();

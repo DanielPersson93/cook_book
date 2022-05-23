@@ -20,7 +20,12 @@ export const getRecipesCategories = async (req: Request, res: Response) => {
     /** Set default to empty string so regex dont complain */
     const searchQuery = req.query.search || "";
     try {
-        const categories = await RecipesModel.find({ category: categoryName, title: { $regex: searchQuery, $options: "i" } })
+        const categories = await RecipesModel.find(
+            {
+                category:
+                    categoryName,
+                title: { $regex: searchQuery, $options: "i" }
+            })
         return res.status(200).json(categories)
     } catch (err) {
         return res.status(400).json(err)
