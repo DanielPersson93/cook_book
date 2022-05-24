@@ -33,7 +33,6 @@ export const getRecipes = async (req: Request, res: Response) => {
                         { ...searchForTitleOrCategoryName },
                         { ...categoryQuery }
                     ]
-
                 }
             }
         ]);
@@ -75,7 +74,6 @@ const getOne = async (_id: string) => {
     return await RecipesModel.aggregate([
         {
             $match: { id: _id },
-
         }
     ]).then((recipes) => recipes ? recipes[0] : null)
 }

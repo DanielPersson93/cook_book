@@ -10,6 +10,7 @@ import HeadingRatingDescription from './components/titleRatingDescription/Headin
 import Reviews from './components/Reviews';
 import { useDispatch } from "react-redux";
 import { ReviewActionType } from '../../store/review/reviewReducer';
+import { IRecipes } from '../../interface/recipe';
 
 const SinglePageBlockStyled = styled.div`
 max-width:1120px;
@@ -32,7 +33,7 @@ const SinglePage = () => {
 
     useEffect(() => {
         const recipeService = new RecipeService();
-        recipeService.getOne(id).then((recipe: any) => {
+        recipeService.getOne(id).then((recipe: IRecipes) => {
             setRecipe(recipe);
             dispatch({ payload: recipe.ratings, type: ReviewActionType.SetReviews });
         })

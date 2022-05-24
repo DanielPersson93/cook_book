@@ -1,4 +1,6 @@
+import { ReactNode } from "react";
 import styled from "styled-components";
+import { IRecipes } from "../../../interface/recipe";
 import ReadMoreButton from "./ReadMoreButton";
 import RecipeImg from "./RecipeImg";
 import RecipeText from "./RecipeText";
@@ -29,8 +31,11 @@ font-weight: 400;
 font-size: 16px;
 margin-bottom:1rem;
 `
+interface IRecipeChildren {
+    recipe: any;
+}
 
-const RecipeSmall = ({ recipe }: any) => (
+const RecipeSmall = ({ recipe }: IRecipeChildren) => (
     <ArticleContainerRecipeStyled>
         <RecipeImg imageUrl={recipe.imageUrl}></RecipeImg>
         <RecipeContainer>

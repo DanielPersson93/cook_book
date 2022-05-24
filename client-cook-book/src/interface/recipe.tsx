@@ -4,13 +4,15 @@ export interface IRecipes {
     description: string;
     imageUrl: string;
     timeInMin: string;
-    ratings?: number[];
+    ratings?: IRating[];
     category: ICategory[];
     ingredients: IIngredients;
     instructions: IInstructions;
-    comments: any[];
+    comments: IComments[];
 }
-
+interface IRating {
+    ratings: number[];
+}
 interface ICategory {
     name: string;
     url: string;
@@ -27,4 +29,9 @@ interface IInstructions {
         instruction: string,
         prio: number
     ]
+}
+export interface IComments {
+    name: string;
+    url: string;
+    _id: string;
 }

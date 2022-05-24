@@ -10,7 +10,7 @@ interface IRecipes {
     description: string;
     imageUrl: string;
     timeInMin: string;
-    ratings?: number[];
+    ratings?: IRatings[];
     category: ICategory[];
     ingredients: IIngredients;
     instructions: IInstructions;

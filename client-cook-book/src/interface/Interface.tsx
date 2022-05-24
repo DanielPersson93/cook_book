@@ -14,6 +14,10 @@ export interface IDesctiptionField {
     children: ReactNode;
 }
 
-
-
+export interface IImage {
+    imageUrl: string;
+}
+export interface RecipeRatingProps {
+    ratings: number[];
+}
 

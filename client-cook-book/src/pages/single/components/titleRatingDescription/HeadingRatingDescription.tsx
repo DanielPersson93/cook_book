@@ -12,8 +12,10 @@ border-radius: 3px;
 margin-top:1rem;
 margin-right:1rem;
 `
-
-const HeadingRatingDescription = ({ recipe }: any) => (
+interface IRecipeProps {
+    recipe: any;
+}
+const HeadingRatingDescription = ({ recipe }: IRecipeProps) => (
     <HeadingRatingDescriptionStyled>
         <TitleRating recipe={recipe} />
         <DescriptionField>{recipe?.description}</DescriptionField>

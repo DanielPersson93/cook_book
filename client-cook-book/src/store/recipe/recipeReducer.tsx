@@ -1,7 +1,7 @@
 import { Action } from "../interfaces/action.model";
 
 export enum RecipeActionType {
-    SetRecipes = "SetRecipes",
+    SetRecipes = "SET_RECIPES",
 }
 
 const initialState = {

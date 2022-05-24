@@ -4,6 +4,7 @@ import CategoryTitle from "./CategoryTitle";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CategoryService } from "../../../services/category.service";
+import { IRecipes } from "../../../interface/recipe";
 
 const SectionLeftStyle = styled.div`
 display:flex;

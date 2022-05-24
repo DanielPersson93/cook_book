@@ -1,5 +1,6 @@
 import styled from "styled-components"
-import { IRecipes } from "../../../interface/recipe";
+import { IComments, IRecipes } from "../../../interface/recipe";
+import { IComment } from "../../../services/comment.service";
 import ReviewComments from "./ReviewComments"
 
 const ReviewFeedbackBlockStyled = styled.div`
@@ -19,7 +20,7 @@ const ReviewFeedbackBlock = ({ recipe }: ReviewFeedbackBlockProps) => {
 
     return (
         <ReviewFeedbackBlockStyled>
-            {recipe?.comments.map((comment: any) => (<ReviewComments comment={comment} key={comment._id} />))}
+            {recipe?.comments.map((comment: IComments) => (<ReviewComments comment={comment} key={comment._id} />))}
         </ReviewFeedbackBlockStyled>
     )
 }

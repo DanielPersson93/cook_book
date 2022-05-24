@@ -1,6 +1,6 @@
 
 interface IRatings {
-    ratings: number[]
+    ratings: number[];
 }
 
 export default IRatings

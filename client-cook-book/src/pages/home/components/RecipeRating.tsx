@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components"
 import starYellow from '../../../assets/starYellow.svg'
+import { RecipeRatingProps } from "../../../interface/Interface";
 
 const RecipeRatingStyle = styled.div`
 font-style: normal;
@@ -13,9 +14,7 @@ display: flex;
 align-items: center;
 `
 
-interface RecipeRatingProps {
-    ratings: number[];
-}
+
 const RecipeRating = ({ ratings }: RecipeRatingProps) => {
     const [ratingLevel, setRatingLevel] = useState(0);
 

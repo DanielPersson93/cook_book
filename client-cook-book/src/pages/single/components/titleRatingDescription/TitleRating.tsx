@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { IRecipes } from "../../../../interface/recipe";
 import RatingsContainer from "./RatingsContainerStyled"
 import Title from "./Title"
 
@@ -6,8 +7,10 @@ const TitleRatingStyled = styled.div`
 display:flex;
 justify-content:space-between;
 `
-
-const TitleRating = ({ recipe }: any) => (
+interface IRecipeProp {
+    recipe: IRecipes;
+}
+const TitleRating = ({ recipe }: IRecipeProp) => (
     <TitleRatingStyled >
         <Title>{recipe?.title}</Title>
         <RatingsContainer />

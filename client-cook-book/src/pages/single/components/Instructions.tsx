@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { IRecipes } from "../../../interface/recipe";
 
 const InstructionsStyled = styled.div`
 background: #85D29F;
@@ -33,9 +34,11 @@ display:inline-block;
 const StyledBoldInSpan = styled.span`
 font-weight:bold;
 `
+interface IRecipesProps {
+    recipe: any;
+}
 
-
-const Instructions = ({ recipe }: any) => {
+const Instructions = ({ recipe }: IRecipesProps) => {
     return (
         <InstructionsStyled>
             <TitleStyled>Följ dessa steg</TitleStyled>

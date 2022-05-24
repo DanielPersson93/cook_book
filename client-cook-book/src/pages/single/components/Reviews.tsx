@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { IRecipes } from "../../../interface/recipe";
 import ReviewFeedbackBlock from "./ReviewFeedbackBlock"
 
 const ReviewsStyled = styled.div`
@@ -26,8 +27,10 @@ margin-bottom:2rem;
 background-color:#006E39;
 color:white;
 `
-
-const Reviews = ({ recipe }: any) => (
+interface IRecipeProp {
+    recipe: IRecipes;
+}
+const Reviews = ({ recipe }: IRecipeProp) => (
     <>
         <ReviewsStyled>
             <ReviewTitleStyled>Omdömde</ReviewTitleStyled>

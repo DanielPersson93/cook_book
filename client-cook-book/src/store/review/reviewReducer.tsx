@@ -1,8 +1,8 @@
 import { Action } from "../interfaces/action.model";
 
 export enum ReviewActionType {
-    SetReviews = "SetReviews",
-    AddReview = "AddReview"
+    SetReviews = "SET_REVIEWS",
+    AddReview = "ADD_REVIEWS"
 }
 
 const initialState = {
