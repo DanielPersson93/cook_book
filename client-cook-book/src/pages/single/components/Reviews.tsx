@@ -13,9 +13,18 @@ margin:auto;
 
 const ReviewTitleStyled = styled.h1`
 font-family: 'Inter', sans-serif;
-font-weight: bold;
+font-style: normal;
+font-weight: 400;
 font-size: 30px;
 line-height: 36px;
+padding:1rem 2.5rem;
+border-radius:50px;
+width:150px;
+margin:auto;
+margin-top:2rem;
+margin-bottom:2rem;
+background-color:#006E39;
+color:white;
 `
 
 const Reviews = ({ recipe }: any) => (

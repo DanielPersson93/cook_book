@@ -22,8 +22,8 @@ margin:1rem;
 const CustomerNameStyled = styled.p`
 font-family: 'Lato', sans-serif;
 font-style: normal;
-font-weight: 700;
-font-size: 16px;
+font-weight: bold;
+font-size: 24px;
 line-height: 19px;
 text-align: left;
 margin:1rem;
